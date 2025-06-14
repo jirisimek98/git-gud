@@ -1,17 +1,29 @@
-package com.jirikovo;
+package com.jirikovo.storage;
 
-public class Quest {
+import java.util.UUID;
+
+public class QuestDAO {
+    private UUID id;
     private String name;
     private String description;
-    private long reward;
+    private int reward;
     private boolean completed;
 
 
-    public Quest(String name, String description, long reward, boolean completed) {
+    public QuestDAO(UUID id, String name, String description, int reward, boolean completed) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.reward = reward;
         this.completed = completed;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getName() {
@@ -30,11 +42,11 @@ public class Quest {
         this.description = description;
     }
 
-    public long getReward() {
+    public int getReward() {
         return reward;
     }
 
-    public void setReward(long reward) {
+    public void setReward(int reward) {
         this.reward = reward;
     }
 
