@@ -1,8 +1,8 @@
-package com.jirikovo.business;
+package com.gitgud.api.dto;
 
 import java.util.UUID;
 
-public class Quest {
+public class QuestDTO {
     private UUID id;
     private String name;
     private String description;
@@ -10,7 +10,7 @@ public class Quest {
     private boolean completed;
 
 
-    public Quest(UUID id, String name, String description, int reward, boolean completed) {
+    public QuestDTO(UUID id, String name, String description, int reward, boolean completed) {
         this.id = id;
         this.name = name;
         this.description = description;

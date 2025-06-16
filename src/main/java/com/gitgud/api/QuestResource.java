@@ -1,4 +1,4 @@
-package com.jirikovo.api;
+package com.gitgud.api;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -10,13 +10,11 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.jboss.logging.Logger;
 
-import com.jirikovo.business.Quest;
-import com.jirikovo.business.QuestLog;
-import com.jirikovo.business.mappers.ApiMapper;
+import com.gitgud.api.dto.QuestDTO;
+import com.gitgud.business.QuestLog;
 
 @Path("/quest")
 public class QuestResource {
@@ -29,10 +27,7 @@ public class QuestResource {
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listQuests() {
-        List<Quest> quests = log.listQuests();
-        List<QuestDTO> dtoList = quests.stream()
-            .map(quest -> ApiMapper.map(quest)) 
-            .collect(Collectors.toList());
+        List<QuestDTO> dtoList = log.listQuests();
         return Response.ok(dtoList).build();
     }
 

@@ -1,4 +1,4 @@
-package com.jirikovo.api;
+package com.gitgud.api;
 
 public class Greeting {
     

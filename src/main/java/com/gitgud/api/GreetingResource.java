@@ -1,4 +1,4 @@
-package com.jirikovo.api;
+package com.gitgud.api;
 
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;

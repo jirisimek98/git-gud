@@ -1,7 +1,7 @@
-package com.jirikovo.business.mappers;
+package com.gitgud.business.mappers;
 
-import com.jirikovo.business.Quest;
-import com.jirikovo.storage.QuestDAO;
+import com.gitgud.business.Quest;
+import com.gitgud.storage.QuestDAO;
 
 public class StorageMapper {
 

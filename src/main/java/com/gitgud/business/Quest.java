@@ -1,8 +1,8 @@
-package com.jirikovo.storage;
+package com.gitgud.business;
 
 import java.util.UUID;
 
-public class QuestDAO {
+public class Quest {
     private UUID id;
     private String name;
     private String description;
@@ -10,7 +10,7 @@ public class QuestDAO {
     private boolean completed;
 
 
-    public QuestDAO(UUID id, String name, String description, int reward, boolean completed) {
+    public Quest(UUID id, String name, String description, int reward, boolean completed) {
         this.id = id;
         this.name = name;
         this.description = description;

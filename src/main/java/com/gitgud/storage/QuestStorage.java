@@ -1,4 +1,4 @@
-package com.jirikovo.storage;
+package com.gitgud.storage;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;

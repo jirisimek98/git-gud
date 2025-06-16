@@ -1,6 +1,5 @@
-package com.jirikovo.business;
+package com.gitgud.business;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,11 +8,11 @@ import java.util.stream.Collectors;
 
 import org.jboss.logging.Logger;
 
-import com.jirikovo.api.QuestDTO;
-import com.jirikovo.business.mappers.ApiMapper;
-import com.jirikovo.business.mappers.StorageMapper;
-import com.jirikovo.storage.QuestDAO;
-import com.jirikovo.storage.QuestStorage;
+import com.gitgud.api.dto.QuestDTO;
+import com.gitgud.business.mappers.ApiMapper;
+import com.gitgud.business.mappers.StorageMapper;
+import com.gitgud.storage.QuestDAO;
+import com.gitgud.storage.QuestStorage;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -35,8 +34,11 @@ public class QuestLog {
         updateLog();
     }
 
-    public List<Quest> listQuests() {
-        return new ArrayList<>(log.values());
+    public List<QuestDTO> listQuests() {
+        updateLog();
+        return log.values().stream()
+        .map(ApiMapper::map)
+        .collect(Collectors.toList());
     }
 
     private void updateLog() {
