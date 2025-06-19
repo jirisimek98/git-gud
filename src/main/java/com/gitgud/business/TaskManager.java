@@ -27,4 +27,8 @@ public class TaskManager {
         .map(ApiMapper::map).collect(Collectors.toList());
     }
 
+    public TaskDTO getTask(UUID id) {
+        return ApiMapper.map(tasks.get(id));
+    }
+
 }
