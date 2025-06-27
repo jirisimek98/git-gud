@@ -31,4 +31,12 @@ public class TaskManager {
         return ApiMapper.map(tasks.get(id));
     }
 
+    public void complete(UUID id) {
+        tasks.get(id).setCompletedAt(LocalDateTime.now());
+    }
+
+    public void update(TaskDTO dto) {
+        tasks.put(dto.getId(), ApiMapper.map(dto));
+    }
+
 }
